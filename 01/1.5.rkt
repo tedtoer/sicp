@@ -1,3 +1,5 @@
+#lang racket
+
 ; normal-order evaluation of (test 0 (p))
 ; (test 0 (p))
 ; (if (= 0 0) 0 (p))

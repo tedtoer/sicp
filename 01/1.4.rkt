@@ -1,3 +1,5 @@
+#lang racket
+
 ; define procedure that gets 2 operands (a, b) and does:
 ; (operator a b)
 ; where operator defined as (if (> b 0) + -) that means
