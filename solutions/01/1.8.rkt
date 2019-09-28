@@ -1,5 +1,7 @@
 #lang racket
 
+(#%require rackunit)
+
 (define (improve guess x)
         (/ (+ (/ x
                  (* guess guess))
@@ -17,7 +19,11 @@
 (define (cube-root x)
         (cube-root-iter 1.0 0 x))
 
-(define foobar (cube-root 27)) ; set an additional variable for reuse in check below
+(define test-number 27)
+(define cube-root-res (cube-root test-number))
 
-foobar ; print cube-root result
-(* foobar foobar foobar) ; print foobar*foobar*foobar check for comparison
+(define cube
+        (* cube-root-res cube-root-res cube-root-res))
+
+(check-equal? (exact-round cube-root-res) 3)
+(check-equal? (exact-round cube) test-number)
