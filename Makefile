@@ -1,4 +1,3 @@
 test:
-  raco test solutions
-
+	raco test solutions
 .PHONY: test
