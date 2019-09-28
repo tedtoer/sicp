@@ -1,5 +1,7 @@
 #lang racket
 
+(#%require rackunit)
+
 (define (average x y)
         (/ (+ x y) 2))
 
@@ -17,7 +19,11 @@
 (define (sqrt x)
         (sqrt-iter 1.0 0 x))
 
-(define foobar (sqrt 250000000)) ; set an additional variable for reuse in check below
+(define test-number 65536)
+(define sqrt1 (sqrt test-number))
 
-foobar ; print sqrt result
-(* foobar foobar) ; print sqrt*sqrt check for comparison
+(define square-of-sqrts
+        (* sqrt1 sqrt1))
+
+(check-equal? (exact-round sqrt1) 256)
+(check-equal? (exact-round square-of-sqrts) test-number)
