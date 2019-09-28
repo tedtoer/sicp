@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 (define (improve guess x)
         (/ (+ guess (/ x guess)) 2))
@@ -16,7 +16,7 @@
                 (sqrt-iter (improve guess x)
                            x)))
                      
-(sqrt-iter 1.0 9)
+; (sqrt-iter 1.0 9)
 
 ; we get infinite recursive loop because of
 ; elementary procedure "if" evaluates through

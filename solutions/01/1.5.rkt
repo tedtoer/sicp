@@ -1,4 +1,4 @@
-#lang racket
+#lang sicp
 
 ; normal-order evaluation of (test 0 (p))
 ; (test 0 (p))
@@ -17,4 +17,4 @@
       0
       y))
 
-(test 0 (p))
+; (test 0 (p))
